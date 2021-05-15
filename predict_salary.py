@@ -35,17 +35,17 @@ def show_predict_page():
 
     st.info("Please enter some information to be used to predict the salary")
 
-    country = ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India','Israel','Italy', 'Netherlands',
-        'Others','Pakistan','Poland','Russian Federation','South Africa','Spain', 'Sweden', 'Switzerland',
-        'Turkey','United Kingdom','United States']
+    country = ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India','Israel','Italy', 'Netherlands', 'Pakistan', 'Poland',
+        'Russian Federation', 'South Africa', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'United Kingdom', 'United States']
 
+      
     education = [ 'Less than Secondary/High school', 'Secondary/High school', 'College/University dropout', 'Associate/Professional degree',   
      'Bachelor’s degree', 'Master’s degree', 'Doctoral degree', ]
     
     devtype = ['Backend Developer', 'Fullstack Developer', 'Database Administrator', 'Frontend Developer', 
     'Data/Business Analyst', 'Academic Researcher/Scientist', 'Desktop/Enterprise Applications Developer', 
     'Designer', 'Data scientist/Machine Learning Specialist', 'Mobile Developer', 'Embedded applications/devices Developer', 
-    'DevOps', 'QA/Test Developer', 'Others', 'Engineering/Product Manager', 'Data Engineer', 'Game/Graphics Developer']
+    'DevOps', 'QA/Test Developer', 'Engineering/Product Manager', 'Data Engineer', 'Game/Graphics Developer']
     
     country = st.selectbox("Countries", country, index=0)
     education = st.selectbox("Education Level", education, index=0)

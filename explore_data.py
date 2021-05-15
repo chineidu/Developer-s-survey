@@ -6,7 +6,7 @@ plt.style.use("seaborn")
 import seaborn as sns
 
 # Helper Functions
-def clean_devtype(descrptn: 'str separated by ;') -> str:
+def clean_devtype(descrptn: str) -> str:
     role = descrptn.split(";")[0]    # select the 1st split
     return role
 
@@ -151,7 +151,7 @@ def show_explore_data_page():
                 xytext=(0, 6),                      # text position
                 ha='center',                        # horizontal alignment
                 va='center',                        # vertical alignment
-                size=14,                            # text size
+                size=9,                             # text size
                 textcoords='offset points')         # text coordinates???
         
     # fig1.tight_layout()
@@ -165,5 +165,5 @@ def show_explore_data_page():
     data = pd.crosstab(index=my_df['Country'], columns='Salary(USD)', aggfunc=np.mean, values=my_df['Salary(USD)'])
     data.columns = ['Salary(USD)']
     data['Salary(USD)'] = data['Salary(USD)'].apply(lambda x: round(x, 2))
-
+    st.write("""### Mean Salary of The Countries""")
     st.bar_chart(data, width=400, height=400)
