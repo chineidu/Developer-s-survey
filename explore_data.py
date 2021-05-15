@@ -38,7 +38,6 @@ def assign_devtype(devtype: str) -> str:
         return 'DevOps'
     elif devtype == 'Developer QA or test':
         return 'QA/Test Developer'
-    
     elif devtype == 'Engineer data':
         return 'Data Engineer'
     elif devtype == 'Developer game or graphics':
@@ -130,7 +129,7 @@ def load_dataframe() -> pd.DataFrame:
 
     return df4
 
-# @st.cache 
+
 def corr_plot(df: pd.DataFrame) -> 'heatmap':
     """It returns a Seaborn correlation plot of all features."""
     from sklearn.preprocessing import LabelEncoder
@@ -158,7 +157,7 @@ my_df = load_dataframe()
 # heat_map = corr_plot(my_df)
 
 
-def show_explore_data_page():
+def show_explore_data_page() -> "Multiple Plots":
     st.title("""
             Explore the Salaries of Developers
             ### Stack Overflow Developer Survey 2020

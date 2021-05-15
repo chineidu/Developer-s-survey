@@ -30,17 +30,17 @@ def show_predict_page():
     """
     st.title(""" 
                      Salary Predictor
-            ### Made by ['Neidu](https://github.com/chineidu)
+            ### App created by ['Neidu](https://github.com/chineidu)
                     """)
 
-    st.info("Please enter some information to be used to predict the salary")
+    st.info("Please enter your information")
 
     country = ['Australia', 'Brazil', 'Canada', 'France', 'Germany', 'India','Israel','Italy', 'Netherlands', 'Pakistan', 'Poland',
         'Russian Federation', 'South Africa', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'United Kingdom', 'United States']
 
       
-    education = [ 'Less than Secondary/High school', 'Secondary/High school', 'College/University dropout', 'Associate/Professional degree',   
-     'Bachelor’s degree', 'Master’s degree', 'Doctoral degree', ]
+    education = ["Less than High School", "High School", "University Dropout", "Professional Degree",   
+        "Bachelor’s Degree", "Master’s Degree", "Post Grad", ]
     
     devtype = ['Backend Developer', 'Fullstack Developer', 'Database Administrator', 'Frontend Developer', 
     'Data/Business Analyst', 'Academic Researcher/Scientist', 'Desktop/Enterprise Applications Developer', 
