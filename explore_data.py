@@ -130,40 +130,45 @@ def load_dataframe() -> pd.DataFrame:
 
     return df4
 
+# @st.cache 
+def corr_plot(df: pd.DataFrame) -> 'heatmap':
+    """It returns a Seaborn correlation plot of all features."""
+    from sklearn.preprocessing import LabelEncoder
+    # encode Country
+    le_country = LabelEncoder()
+    df['Country'] = le_country.fit_transform(df['Country'])
+    # encode EdLevel
+    le_education = LabelEncoder()
+    df['EdLevel'] = le_education.fit_transform(df['EdLevel'])
+    # encode DevType
+    le_devtype = LabelEncoder()
+    df['DevType'] = le_devtype.fit_transform(df['DevType'])
+    df = df.reset_index(drop=True)
+    # Correlation Plot
+    # plt.figure(figsize=(12, 8))
+    fig, ax = plt.subplots(figsize=(12, 8))
+    data = df.corr()
+    sns.heatmap(data=data, annot=True, cmap="coolwarm", annot_kws={"size": 14})
+    plt.title('Correlation Plot of the Features', size=18)
+
+    # plt.show()
+    st.pyplot(fig)
+
 my_df = load_dataframe() 
+# heat_map = corr_plot(my_df)
+
 
 def show_explore_data_page():
     st.title("""
             Explore the Salaries of Developers
             ### Stack Overflow Developer Survey 2020
     """)
-    nrows, ncols = 1, 1
-    fig1, ax = plt.subplots(nrows, ncols, figsize=(14, 5))
-
-    sns.countplot(data=my_df, x='Country', ax=ax, palette='Paired')
-    ax.tick_params(axis='x', labelrotation=90, labelsize=12)
-    
-    for bar in ax.patches:
-        x = bar.get_x() + bar.get_width() / 2
-        y = bar.get_height()
-        ax.annotate(text=y,                         # text pos
-                xy=(x, y),                          # (x, y)
-                xytext=(0, 6),                      # text position
-                ha='center',                        # horizontal alignment
-                va='center',                        # vertical alignment
-                size=9,                             # text size
-                textcoords='offset points')         # text coordinates???
-        
-    # fig1.tight_layout()
-    # plt.show()
-    st.write("""### Number of Countries""")
-    st.pyplot(fig1)
-
-
-    # a = my_df.groupby(['Country'])['Salary(USD)'].mean()  
 
     data = pd.crosstab(index=my_df['Country'], columns='Salary(USD)', aggfunc=np.mean, values=my_df['Salary(USD)'])
     data.columns = ['Salary(USD)']
     data['Salary(USD)'] = data['Salary(USD)'].apply(lambda x: round(x, 2))
     st.write("""### Mean Salary of The Countries""")
     st.bar_chart(data, width=400, height=400)
+
+    st.write("""### Correlation Plot of The Features""")
+    corr_plot(my_df)
