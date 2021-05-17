@@ -9,7 +9,7 @@ def load_model() -> "pickle_object":
     Country, DevType and Education level.
     """
     
-    with open("model.pkl", "rb") as f:
+    with open("./model/model.pkl", "rb") as f:
         model = pickle.load(f)
 
     return model
