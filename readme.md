@@ -14,7 +14,7 @@ Important features (data points) in the dataset were selected and further prepro
 
 ### Data Exploration
 
-* The data contains a lot of outliers which is to be expected since it's a survey from various regions in the world. 
+* The data contains a lot of outliers which is to be expected since it's a survey from various regions in the world.
 * On average, most developers earn about USD 60,000 with some earning as high as USD 2,000,000. 
 * Most of respondents (20%) are from the United States followed by India (13%). Nigeria (~1%) has the highest number of respondents from Africa
 * After the data cleaning, it can be seen that most developers have a Barchelor's degree.
