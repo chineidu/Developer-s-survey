@@ -20,6 +20,9 @@ Important features (data points) in the dataset were selected and further prepro
 * After the data cleaning, it can be seen that most developers have a Barchelor's degree.
 ![EdLevel](https://i.postimg.cc/L8T7mWWn/EdLevel.png)
 
+* Country is by far the most important factor in determining how much a developer will earn. Developers in the US earn the most. The number of years of coding experience is also a very important factor.
+[![F-imp.jpg](https://i.postimg.cc/WbM1QMZZ/F-imp.jpg)](https://postimg.cc/6ypKZ4Y6)
+
 ### Model Building and Performance
 
 Several regression models were built but after the models were evaluated, Random Forest regressor gave the best performance. It was further improved by hyperparameter tuning.
