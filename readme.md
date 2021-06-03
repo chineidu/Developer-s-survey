@@ -30,3 +30,4 @@ Several regression models were built but after the models were evaluated, Random
 ### Application
 
 Streamlit was used to build an app which estimates the salary of developers given a list of values. A dashboard for exploring the data was also integrated in the app.
+[![salary-app.jpg](https://i.postimg.cc/zX3FRQ4S/salary-app.jpg)](https://postimg.cc/8jQ62Zpj)
