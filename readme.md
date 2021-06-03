@@ -27,6 +27,6 @@ Important features (data points) in the dataset were selected and further prepro
 
 Several regression models were built but after the models were evaluated, Random Forest regressor gave the best performance. It was further improved by hyperparameter tuning.
 
-### Model Deployment
+### Application
 
-Further information will be provided.
+Streamlit was used to build an app which estimates the salary of developers given a list of values. A dashboard for exploring the data was also integrated in the app.
