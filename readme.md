@@ -25,7 +25,8 @@ Important features (data points) in the dataset were selected and further prepro
 
 ### Model Building and Performance
 
-Several regression models were built but after the models were evaluated, Random Forest regressor gave the best performance. It was further improved by hyperparameter tuning.
+* Several regression models were built but after the models were evaluated, Random Forest regressor gave the best performance. It was further improved by hyperparameter tuning using GridSearchCV.
+* A root mean squared error of 0.52 was obtained.
 
 ### Application
 
